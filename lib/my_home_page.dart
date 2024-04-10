@@ -50,6 +50,40 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
           ),
+          Card(
+            child: ListTile(
+              title: const Text('Flutter 2'),
+              subtitle: const Text('Flutter Developer 2'),
+              onTap: () {
+                Get.bottomSheet(
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.blue.shade300,
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    child: Column(
+                      children: [
+                        ListTile(
+                          leading: const Icon(Icons.light_mode, color: Colors.white,),
+                          title: const Text('Light Theme'),
+                          onTap: (){
+
+                          },
+                        ),
+                        ListTile(
+                          leading: const Icon(Icons.dark_mode, color: Colors.white,),
+                          title: const Text('Dark Theme'),
+                          onTap: (){
+
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
         ],
       ),
     );
