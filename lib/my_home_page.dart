@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -22,6 +23,34 @@ class _MyHomePageState extends State<MyHomePage> {
             fontWeight: FontWeight.bold,
           ),
         ),
+      ),
+      body: Column(
+        children: [
+          Card(
+            child: ListTile(
+              title: const Text('Flutter'),
+              subtitle: const Text('Flutter Developer'),
+              onTap: () {
+                Get.defaultDialog(
+                  title: 'Flutter',
+                  middleText: 'Flutter Developer',
+                  confirm: TextButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Text('Yes'),
+                  ),
+                  cancel: TextButton(
+                    onPressed: () {
+                      Get.back();
+                    },
+                    child: const Text('No'),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
