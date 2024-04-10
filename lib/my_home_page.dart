@@ -59,22 +59,31 @@ class _MyHomePageState extends State<MyHomePage> {
                   Container(
                     decoration: BoxDecoration(
                       color: Colors.blue.shade300,
-                      borderRadius: BorderRadius.circular(30),
+                      borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(30),
+                        topRight: Radius.circular(30),
+                      ),
                     ),
                     child: Column(
                       children: [
                         ListTile(
-                          leading: const Icon(Icons.light_mode, color: Colors.white,),
+                          leading: const Icon(
+                            Icons.light_mode,
+                            color: Colors.white,
+                          ),
                           title: const Text('Light Theme'),
-                          onTap: (){
-
+                          onTap: () {
+                            Get.changeTheme(ThemeData.light());
                           },
                         ),
                         ListTile(
-                          leading: const Icon(Icons.dark_mode, color: Colors.white,),
+                          leading: const Icon(
+                            Icons.dark_mode,
+                            color: Colors.white,
+                          ),
                           title: const Text('Dark Theme'),
-                          onTap: (){
-
+                          onTap: () {
+                            Get.changeTheme(ThemeData.dark());
                           },
                         ),
                       ],
